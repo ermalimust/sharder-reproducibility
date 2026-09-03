@@ -1,0 +1,8 @@
+# Frozen artifact bytes are bound by manifest.json; do not normalize them.
+artifact/** -text
+*.zip binary
+*.pdf binary
+*.png binary
+README.md text eol=lf
+.gitignore text eol=lf
+.gitattributes text eol=lf
