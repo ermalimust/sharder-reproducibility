@@ -4,9 +4,16 @@ Reproducibility materials for **Where Cross-Shard Coordination Becomes a Bottlen
 
 ## Download and start
 
-Open this repository's **Releases** tab, select **v1.0.0**, and download the named asset **`FGCS_reproducibility_public_v1.0.0.zip`**. This release package contains the complete source code, configurations, raw data, aggregate results, figures, and validation materials. Use this named asset for reproduction, rather than GitHub's automatically generated source archives.
+Download the two named assets from [release v1.1.0 (R2)](https://github.com/ermalimust/sharder-reproducibility/releases/tag/v1.1.0).
 
-Extract the ZIP and open its `artifact/` directory:
+| Asset | Contents and starting point |
+| --- | --- |
+| `FGCS_reproducibility_public_v1.0.0.zip` | Original simulator, emulator, configurations, per-seed results, figures and tests. Extract the archive and open `artifact/README.md`. The same archive is available in [v1.0.0](https://github.com/ermalimust/sharder-reproducibility/releases/tag/v1.0.0). |
+| `FGCS_R2_evidence.zip` | Paired DES data for 20 seeds, replay and analysis scripts, Ed25519 benchmark and batch timings, and aggregate results for the 365-transaction persistence replay. Extract this archive separately and open its top-level `README.md`. |
+
+From the extracted R2 companion, run `python paired_des/recompute.py` to reproduce the latency comparison and paired 95% confidence interval. For the 365-transaction replay, only aggregate results are available. The original input trace and per-transaction timings are unavailable.
+
+In the original package's `artifact/` directory:
 
 - `README.md` provides the study commands, environment information, and measurement definitions.
 - `EVIDENCE_MAP.md` connects each study to its data, figures, and validation checks.
