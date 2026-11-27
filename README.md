@@ -4,14 +4,16 @@ Reproducibility materials for **Where Cross-Shard Coordination Becomes a Bottlen
 
 ## Download and start
 
-Download the two named assets from [release v1.1.0 (R2)](https://github.com/ermalimust/sharder-reproducibility/releases/tag/v1.1.0).
+Download both assets from [release v1.2.0 (R2)](https://github.com/ermalimust/sharder-reproducibility/releases/tag/v1.2.0). Extract the two ZIP files into separate directories.
 
-| Asset | Contents and starting point |
+| Asset | Contents |
 | --- | --- |
-| `FGCS_reproducibility_public_v1.0.0.zip` | Original simulator, emulator, configurations, per-seed results, figures and tests. Extract the archive and open `artifact/README.md`. The same archive is available in [v1.0.0](https://github.com/ermalimust/sharder-reproducibility/releases/tag/v1.0.0). |
-| `FGCS_R2_evidence.zip` | Paired DES data for 20 seeds, replay and analysis scripts, Ed25519 benchmark and batch timings, and aggregate results for the 365-transaction persistence replay. Extract this archive separately and open its top-level `README.md`. |
+| `FGCS_reproducibility_public_v1.0.0.zip` | Original simulator, emulator, configurations, per-seed results, figures and tests. Start with `artifact/README.md`. The same archive is available in [v1.0.0](https://github.com/ermalimust/sharder-reproducibility/releases/tag/v1.0.0). |
+| `FGCS_R2_evidence_v1.2.0.zip` | Revision experiments, data and reproduction instructions. Start with its top-level `README.md`. |
 
-From the extracted R2 companion, run `python paired_des/recompute.py` to reproduce the latency comparison and paired 95% confidence interval. For the 365-transaction replay, only aggregate results are available. The original input trace and per-transaction timings are unavailable.
+The companion contains measured inputs and budget calculations for five shard counts, seed-level DES stage and cadence comparisons, an instrumented emulator stage diagnostic, a 20-seed memory-backed Sharder comparison with latency and process CPU time, and a paired 30-second proof-service interruption. It also contains the Ed25519 batch timings and the storage and committee-size calculations.
+
+From the companion directory, run `python paired_des/recompute.py` to reproduce the paired slot-capacity result. Each study directory documents its replay commands. The earlier [v1.1.0](https://github.com/ermalimust/sharder-reproducibility/releases/tag/v1.1.0) contains the first R2 companion, including the aggregate-only 365-transaction replay. The main persistence comparison in this version uses the standard 16-shard workload.
 
 In the original package's `artifact/` directory:
 
